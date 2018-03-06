@@ -33,6 +33,17 @@ document.querySelector('#node').addEventListener('submit', function (e) {
   });
 });
 
+document.querySelector('#checkContacts').addEventListener('submit', function (e) {
+  // Prevent page refresh
+  e.preventDefault();
+
+  console.log(node._rpc);
+  for (var key in node._rpc._handshakesToContacts) {
+    console.log(node._rpc._handshakesToContacts[key])
+  }
+  // alert("Contacts:" + JSON.stringify(node._rpc._handshakesToContacts.values()));
+});
+
 document.querySelector('#connect').addEventListener('submit', function (e) {
   // Prevent page refresh
   e.preventDefault();
